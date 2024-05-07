@@ -17,7 +17,7 @@ class TestIncreasePrice:
     def test_(self):
         df = create_df("data/doughnuts.json")
         df2 = increase_price(df, 5).price
-        assert df.mul("price", 1.05) == df2
+        assert df.mul({"price": 1.05}) == df2
 
 
 class TestGetBestValue:
