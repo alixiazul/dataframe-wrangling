@@ -29,7 +29,7 @@ Run the black code check, unit tests, coverage check:
 make run-checks
 ```
 
-Run Jupyter Notebook:
+Run Jupyter Notebook in a Jupyter server:
 ```sh
 make notebook
 ```
