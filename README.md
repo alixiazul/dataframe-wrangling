@@ -9,17 +9,27 @@
 
 ## Usage
 
-Create python interpreter environment: 
+Create Python interpreter environment: 
+```sh
 make create-environment
+```
 
 Build the environment requirements:
+```sh
 make requirements
+```
 
-Set up dev requirements (bandit, safety, black):
+Set up development requirements (bandit, safety, black):
+```sh
 make dev-setup
+```
 
 Run the black code check, unit tests, coverage check:
+```sh
 make run-checks
+```
 
-Run jupyter notebook:
+Run Jupyter Notebook:
+```sh
 make notebook
+```
