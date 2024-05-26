@@ -17,22 +17,34 @@ def create_df(filename: str) -> pd.DataFrame:
     return df
 
 
-def increase_price(df, percent):
+def increase_price(df: pd.DataFrame, percent: int) -> pd.DataFrame:
     """
+
     Arguments:
     - df: dataframe.
-    - percent:
-    should take the data frame and a percentage as arguments, and return a new dataframe with all the prices increased by the given percentage.
+    - percent: int. Percentage to increase the price of a doughnut.
+
+    Returns:
+    New dataframe with all the prices increased by the given
+    percent
+
     """
     df2 = deepcopy(df)
     df2["price"] = round(df2["price"] * (percent / 100 + 1), 2)
     return df2
 
 
-def get_best_value(df):
-    """ " Calculates the cost per calorie of each doughnut and
-    return the doughnut with the cheapes cost per calorie.
-    (We didn't say this was a healthy exercise...)"""
+def get_best_value(df: pd.DataFrame):
+    """
+    Calculates the cost per calorie of each doughnut and
+    return the doughnut with the cheapest cost per calorie.
+
+    Arguments:
+    - df: dataframe.
+
+    Returns:
+    Value of the chapest doughtnut
+    """
     df2 = deepcopy(df)
     df2["cost_per_calorie"] = df2["price"] / df2["calories"]
     return df2.sort_values("cost_per_calorie").head(1).doughnut_type.item()

@@ -79,8 +79,11 @@ unit-test:
 check-coverage:
 	$(call execute_in_env, PYTHONPATH=${PYTHONPATH} pytest --cov=src)
 
+report-coverage: check-coverage
+	$(call execute_in_env, PYTHONPATH=${PYTHONPATH} coverage run -m pytest)
+
 ## Run all checks
-run-checks: security-test run-black unit-test check-coverage
+run-checks: security-test run-black unit-test check-coverage 
 
 # Notebook
 
