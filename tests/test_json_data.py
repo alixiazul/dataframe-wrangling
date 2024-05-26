@@ -1,5 +1,4 @@
 from src.json_data import create_df, increase_price, get_best_value
-from copy import copy
 import pandas as pd
 
 
@@ -7,7 +6,7 @@ class TestCreateDf:
     def test_returns_dataframe(self):
         test_df = pd.DataFrame()
         result = create_df("data/doughnuts.json")
-        assert type(test_df) == type(result)
+        assert type(test_df) is type(result)
 
 
 class TestIncreasePrice:
